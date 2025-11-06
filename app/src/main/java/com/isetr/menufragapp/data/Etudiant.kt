@@ -10,6 +10,7 @@ import androidx.room.*
 data class Etudiant(
     @PrimaryKey(autoGenerate = true)
     val id: Int = 0,
-    val mail: String,
+    val identifiant: String,
+    val email: String,
     val classe: String
 )

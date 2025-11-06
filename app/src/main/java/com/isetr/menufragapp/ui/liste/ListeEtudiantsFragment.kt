@@ -7,11 +7,8 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
-import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.isetr.menufragapp.R
-import com.isetr.menufragapp.data.Etudiant
 import com.isetr.menufragapp.databinding.FragmentListeEtudiantsBinding
 import com.isetr.menufragapp.viewModel.EtudiantViewModel
 import kotlin.getValue
@@ -47,14 +44,15 @@ class ListeEtudiantsFragment : Fragment() {
         // 🎯 L'appel de la méthode doit se faire ici !
         fillRecyclerView()
         // 2. Observation de l'état de la liste dans le ViewModel
-        etudiantViewModel.etudiants.observe(viewLifecycleOwner) { nouvelleListe ->
+        etudiantViewModel.allEtudiants.observe(viewLifecycleOwner) { nouvelleListe ->
             // Met à jour la liste dans l'Adapter et notifie le RecyclerView
-            (binding.recyclerViewEtudiants.adapter as EtudiantAdapter).updateList(nouvelleListe)
+            //(binding.recyclerViewEtudiants.adapter as EtudiantAdapter).updateList(nouvelleListe)
+            etudiantAdapter.updateList(nouvelleListe)
             // Note : Vous devrez implémenter une méthode `updateList` dans votre EtudAdapter.
         }
     }
     private fun fillRecyclerView() {
-      
+
         val recyclerView: RecyclerView = binding.recyclerViewEtudiants
         recyclerView.layoutManager = LinearLayoutManager(requireContext())
         recyclerView.setHasFixedSize(true)
@@ -67,7 +65,7 @@ class ListeEtudiantsFragment : Fragment() {
                 // 1. Mettre à jour le LiveData dans le ViewModel (Partage de la donnée)
                 etudiantViewModel.selectionnerEtudiant(etudiant)
                 // 2. Naviguer vers le Fragment (Détail)
-                // a compléter 
+                // a compléter
             }
 
         )
