@@ -39,7 +39,7 @@ class AjoutEtudiantFragment : Fragment() {
 
         if (email.isNotBlank() && classe.isNotBlank()) {
             val nouvelEtudiant = Etudiant(
-                id = 0, // auto-généré par Room
+                id = 0,
                 identifiant = identifiant, email = email, classe = classe
             )
 

@@ -11,4 +11,5 @@
     <string name="menu_ajout">Ajouter Etudiant</string>
     <string name="menu_liste">"Liste des étudiants "</string>
     <string name="menu_detail">Detail Etudiant</string>
+    <string name="search_icon_text">Rechercher</string>
 </resources>

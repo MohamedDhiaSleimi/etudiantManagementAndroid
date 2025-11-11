@@ -1,5 +1,6 @@
 package com.isetr.menufragapp.ui.liste
 
+import android.annotation.SuppressLint
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
@@ -26,18 +27,18 @@ class EtudiantAdapter(
         val etudiant = etudiants[position]
         holder.bind(etudiant)
 
-        // Clic simple pour voir les détails
+        // Click simple pour voir les détails
         holder.itemView.setOnClickListener {
             onItemClicked(etudiant)
         }
 
-        // Clic long pour supprimer
+        // Click long pour supprimer
         holder.itemView.setOnLongClickListener {
             onItemLongClicked(etudiant)
             true
         }
 
-        // Clic sur le bouton de mise à jour
+        // Click sur le bouton de mise à jour
         holder.binding.buttonUpdate.setOnClickListener {
             onItemUpdate(etudiant)
         }
@@ -45,6 +46,7 @@ class EtudiantAdapter(
 
     override fun getItemCount() = etudiants.size
 
+    @SuppressLint("NotifyDataSetChanged")
     fun updateList(newList: List<Etudiant>) {
         this.etudiants.clear()
         this.etudiants.addAll(newList)
@@ -54,6 +56,7 @@ class EtudiantAdapter(
     inner class EtudiantViewHolder(val binding: ItemEtudiantBinding) :
         RecyclerView.ViewHolder(binding.root) {
 
+        @SuppressLint("SetTextI18n")
         fun bind(etudiant: Etudiant) {
             binding.textViewMail.text = " ${etudiant.email}"
             binding.textViewClasse.text = "Classe : ${etudiant.classe}"

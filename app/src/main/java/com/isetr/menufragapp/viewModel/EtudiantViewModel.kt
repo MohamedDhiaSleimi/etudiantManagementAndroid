@@ -5,7 +5,7 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.switchMap
 import androidx.lifecycle.viewModelScope
-import com.isetr.menufragapp.Repository.EtudiantRepository
+import com.isetr.menufragapp.repository.EtudiantRepository
 import com.isetr.menufragapp.data.Etudiant
 import kotlinx.coroutines.launch
 

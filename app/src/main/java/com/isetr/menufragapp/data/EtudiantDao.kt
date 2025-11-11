@@ -11,13 +11,13 @@ import androidx.room.Update
 @Dao
 interface EtudiantDao {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    suspend fun Insert(etudiant: Etudiant)
+    suspend fun insert(etudiant: Etudiant)
 
     @Update
-    suspend fun Update(etudiant: Etudiant)
+    suspend fun update(etudiant: Etudiant)
 
     @Delete
-    suspend fun Delete(etudiant: Etudiant)
+    suspend fun delete(etudiant: Etudiant)
 
     @Query("SELECT * FROM etudiant_table ORDER BY identifiant ASC")
     fun getAllEtudiants(): LiveData<List<Etudiant>>

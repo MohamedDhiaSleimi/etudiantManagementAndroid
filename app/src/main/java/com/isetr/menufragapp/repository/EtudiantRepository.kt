@@ -1,4 +1,4 @@
-package com.isetr.menufragapp.Repository
+package com.isetr.menufragapp.repository
 
 import androidx.lifecycle.LiveData
 import com.isetr.menufragapp.data.Etudiant
@@ -10,15 +10,15 @@ class EtudiantRepository(
     val allEtudiants: LiveData<List<Etudiant>> = etudiantDao.getAllEtudiants()
 
     suspend fun insert(etudiant: Etudiant) {
-        etudiantDao.Insert(etudiant)
+        etudiantDao.insert(etudiant)
     }
 
     suspend fun update(etudiant: Etudiant) {
-        etudiantDao.Update(etudiant)
+        etudiantDao.update(etudiant)
     }
 
     suspend fun delete(etudiant: Etudiant) {
-        etudiantDao.Delete(etudiant)
+        etudiantDao.delete(etudiant)
     }
 
     suspend fun deleteAll() {

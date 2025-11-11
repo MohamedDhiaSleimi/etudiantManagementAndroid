@@ -20,6 +20,7 @@ import com.isetr.menufragapp.data.Etudiant
 import com.isetr.menufragapp.databinding.FragmentListeEtudiantsBinding
 import com.isetr.menufragapp.viewModel.EtudiantViewModel
 
+@Suppress("DEPRECATION")
 class ListeEtudiantsFragment : Fragment() {
     private var _binding: FragmentListeEtudiantsBinding? = null
     private val binding get() = _binding!!
@@ -28,7 +29,7 @@ class ListeEtudiantsFragment : Fragment() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setHasOptionsMenu(true) // Essentiel pour onCreateOptionsMenu
+        setHasOptionsMenu(true)
     }
 
     override fun onCreateView(
@@ -55,6 +56,7 @@ class ListeEtudiantsFragment : Fragment() {
         }
     }
 
+    @Deprecated("Deprecated in Java")
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
         inflater.inflate(R.menu.main, menu)
 

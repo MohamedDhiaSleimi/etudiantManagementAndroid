@@ -2,7 +2,7 @@ package com.isetr.menufragapp.viewModel
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
-import com.isetr.menufragapp.Repository.EtudiantRepository
+import com.isetr.menufragapp.repository.EtudiantRepository
 
 class EtudiantViewModelFactory(
     private val repository: EtudiantRepository

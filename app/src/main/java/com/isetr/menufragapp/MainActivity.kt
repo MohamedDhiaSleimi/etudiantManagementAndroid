@@ -11,7 +11,7 @@ import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import com.google.android.material.navigation.NavigationView
 import com.google.android.material.snackbar.Snackbar
-import com.isetr.menufragapp.Repository.EtudiantRepository
+import com.isetr.menufragapp.repository.EtudiantRepository
 import com.isetr.menufragapp.data.EtudiantDatabase
 import com.isetr.menufragapp.databinding.ActivityMainBinding
 import com.isetr.menufragapp.viewModel.EtudiantViewModel
