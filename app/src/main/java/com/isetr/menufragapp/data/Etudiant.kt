@@ -8,9 +8,12 @@ import androidx.room.*
  */
 @Entity(tableName = "etudiant_table")
 data class Etudiant(
-    @PrimaryKey(autoGenerate = true)
-    val id: Int = 0,
-    val identifiant: String,
-    val email: String,
+    @PrimaryKey()
+    val cin: Int,
+    val nom: String,
+    val prenom: String,
+    val mail: String,
+    val password: String,
     val classe: String
 )
+
